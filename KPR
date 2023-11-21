@@ -1,0 +1,125 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main () {
+    int pilih ,anak, hasil, pengajuan, cicilan, bunga; 
+    string pekerjaan, ktp, kk, npwp, rek_koran, nama,pinjaman;
+    cout << "\n============================================================\n";
+    cout << "           Selamat Datang di Kantor BCA Kranggan\n";
+    cout << "  Selamat datang di pengajuan KPR (Kredit Pemilikan Rumah)\n";
+    cout << "============================================================\n";
+
+  
+    cout << "\nHarap Masukkan Data Anda (Nama, KTP, Nomor Kartu Keluarga, Jumlah Anak, Status Pekerjaan) : ";
+    cout << "\nMasukkan Nama Lengkap Anda : ";
+    getline (cin, nama);
+    cout << "\nMasukkan Nomor KTP Anda : ";
+    getline (cin, ktp);
+    cout << "\nMasukan jumlah anak anda : ";
+    cin >>anak ;
+    cout << "\nPilih Status Pekerjaan Anda : ";
+    cout << "\n1. Pegawai Negeri Sipil";
+    cout << "\n2. Karyawan Swasta";
+    cout << "\n3. Wirausaha";
+    cout << "\n\nPilih Status Pekerjaan Anda [1,2,3] : " ;
+    //Status Pekerjaan
+
+    cin >> pilih;
+    switch (pilih) {
+        case 1:
+        cout << "Pegawai Negeri Sipil\n";
+        if (anak <= 10) {
+            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 1.000.000 - Rp. 100.000.000 : ";
+            cin>>pengajuan;
+            cout<<"\n1. 12 Bulan"<<endl;
+            cout<<"2. 6 Bulan"<<endl;
+            cout<<"3. 3 Bulan"<<endl; 
+            cout<<"Pilih Cicilan Anda [1, 2, 3] : ";
+            cin>>cicilan;
+            if(cicilan == 1) { 
+            bunga = pengajuan / 12 * 0.01 ;
+            hasil = pengajuan / 12  ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+                
+            }else if (cicilan == 2) {
+            bunga = pengajuan / 6 * 0.01 ;
+            hasil = pengajuan / 6 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+
+            }else if (cicilan == 3) {
+            bunga = pengajuan / 3 * 0.01 ;
+            hasil = pengajuan / 3 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            }
+        }
+        break;
+
+        case 2:
+        cout << "Karyawan Swasta\n";
+        if (anak <= 10) {
+            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 1.000.000 - Rp. 100.000.000 : ";
+            cin>>pengajuan;
+            cout<<"\n1. 12 Bulan"<<endl;
+            cout<<"2. 6 Bulan"<<endl;
+            cout<<"3. 3 Bulan"<<endl; 
+            cout<<"Pilih Cicilan Anda [1, 2, 3] : ";
+            cin>>cicilan;
+            if(cicilan == 1) { 
+            bunga = pengajuan / 12 * 0.01 ;
+            hasil = pengajuan / 12 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+                
+            }else if (cicilan == 2) {
+            bunga = pengajuan / 6 * 0.01 ;
+            hasil = pengajuan / 6  ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+
+            }else if (cicilan == 3) {
+            bunga = pengajuan / 3 * 0.01 ;
+            hasil = pengajuan / 3 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            }
+        }
+        break;
+
+        case 3:
+        cout << "Wirausaha\n";
+        if (anak <= 10) {
+            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 1.000.000 - Rp. 100.000.000 : ";
+            cin>>pengajuan;
+            cout<<"\n1. 12 Bulan"<<endl;
+            cout<<"2. 6 Bulan"<<endl;
+            cout<<"3. 3 Bulan"<<endl; 
+            cout<<"Pilih Cicilan Anda [1, 2, 3] : ";
+            cin>>cicilan;
+            if(cicilan == 1) { 
+            bunga = pengajuan / 12 * 0.01 ;
+            hasil = pengajuan / 12 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+                
+            }else if (cicilan == 2) {
+            bunga = pengajuan / 6 * 0.01 ;
+            hasil = pengajuan / 6 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+
+            }else if (cicilan == 3) {
+            bunga = pengajuan / 3 * 0.01 ;
+            hasil = pengajuan / 3 ;
+            cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
+            cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            }
+        }
+        break;
+    }
+
+}

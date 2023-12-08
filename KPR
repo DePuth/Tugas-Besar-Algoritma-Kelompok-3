@@ -4,7 +4,7 @@
 using namespace std;
 
 int main () {
-    int pilih ,anak, hasil, pengajuan, cicilan, bunga; 
+    int pilih ,anak, hasil, pengajuan, cicilan, bunga, dp, hasil2; 
     string pekerjaan, ktp, kk, npwp, rek_koran, nama,pinjaman;
     cout << "\n============================================================\n";
     cout << "           Selamat Datang di Kantor BCA Kranggan\n";
@@ -18,7 +18,7 @@ int main () {
     cout << "\nMasukkan Nomor KTP Anda : ";
     getline (cin, ktp);
     cout << "\nMasukan jumlah anak anda : ";
-    cin >>anak ;
+    cin >> anak ;
     cout << "\nPilih Status Pekerjaan Anda : ";
     cout << "\n1. Pegawai Negeri Sipil";
     cout << "\n2. Karyawan Swasta";
@@ -28,98 +28,267 @@ int main () {
 
     cin >> pilih;
     switch (pilih) {
+
+        // PEGAWAI NEGERI SIPIL
+
         case 1:
         cout << "Pegawai Negeri Sipil\n";
         if (anak <= 10) {
-            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 1.000.000 - Rp. 100.000.000 : ";
+            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 10.000.000 - Rp. 100.000.000 : ";
             cin>>pengajuan;
+            if (pengajuan < 10000000){
+                cout << "Maaf Pengajuan Anda Gagal Diproses Karena Kurang Dari Rp.10.000.000";
+                return 0;
+            }
             cout<<"\n1. 12 Bulan"<<endl;
             cout<<"2. 6 Bulan"<<endl;
             cout<<"3. 3 Bulan"<<endl; 
             cout<<"Pilih Cicilan Anda [1, 2, 3] : ";
             cin>>cicilan;
+
             if(cicilan == 1) { 
             bunga = pengajuan / 12 * 0.01 ;
             hasil = pengajuan / 12  ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Pegawai Negeri Sipil" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 12 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
+            }
                 
             }else if (cicilan == 2) {
             bunga = pengajuan / 6 * 0.01 ;
             hasil = pengajuan / 6 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
 
-            }else if (cicilan == 3) {
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+            if (dp == 2500000){
+            cout << "\n============================================================\n\n";
+            cout << "                     Kwitansi Pembayaran\n\n";
+            cout << "Nama Lengkap Anda : " << nama;
+            cout << "\nNomor KTP Anda : " << ktp;
+            cout << "\nJumlah Anak Anda : " << anak;
+            cout << "\nPekerjaan Anda : Pegawai Negeri Sipil" ;
+            cout << "\nCicilan Yang Anda Harus Lunasi Selama : 6 Bulan" ;
+            cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+            cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+            cout << "\n============================================================\n";
+            }
+            
+            else if (cicilan == 3) {
             bunga = pengajuan / 3 * 0.01 ;
             hasil = pengajuan / 3 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+            if (dp == 2500000){
+            cout << "\n============================================================\n\n";
+            cout << "                     Kwitansi Pembayaran\n\n";
+            cout << "Nama Lengkap Anda : " << nama;
+            cout << "\nNomor KTP Anda : " << ktp;
+            cout << "\nJumlah Anak Anda : " << anak;
+            cout << "\nPekerjaan Anda : Pegawai Negeri Sipil" ;
+            cout << "\nCicilan Yang Anda Harus Lunasi Selama : 3 Bulan" ;
+            cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+            cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+            cout << "\n============================================================\n";
             }
-        }
+            }
+        } 
         break;
+
+        // KARYAWAN SWASTA
 
         case 2:
         cout << "Karyawan Swasta\n";
         if (anak <= 10) {
-            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 1.000.000 - Rp. 100.000.000 : ";
+            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 10.000.000 - Rp. 100.000.000 : ";
             cin>>pengajuan;
+            if (pengajuan < 10000000){
+                cout << "Maaf Pengajuan Anda Gagal Diproses Karena Kurang Dari Rp.10.000.000";
+                return 0;
+            }
             cout<<"\n1. 12 Bulan"<<endl;
             cout<<"2. 6 Bulan"<<endl;
             cout<<"3. 3 Bulan"<<endl; 
             cout<<"Pilih Cicilan Anda [1, 2, 3] : ";
             cin>>cicilan;
+
             if(cicilan == 1) { 
             bunga = pengajuan / 12 * 0.01 ;
             hasil = pengajuan / 12 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+             
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Karyawan Swasta" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 12 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
+            }
                 
             }else if (cicilan == 2) {
             bunga = pengajuan / 6 * 0.01 ;
             hasil = pengajuan / 6  ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Karyawan Swasta" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 6 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
+            }
 
             }else if (cicilan == 3) {
             bunga = pengajuan / 3 * 0.01 ;
             hasil = pengajuan / 3 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Karyawan Swasta" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 3 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
             }
-        }
+            }
+        } 
         break;
+
+        // WIRAUSAHA
 
         case 3:
         cout << "Wirausaha\n";
         if (anak <= 10) {
-            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 1.000.000 - Rp. 100.000.000 : ";
+            cout << "Masukkan Pengajuan Pinjaman Anda Rp. 10.000.000 - Rp. 100.000.000 : ";
             cin>>pengajuan;
+            if (pengajuan < 10000000){
+                cout << "Maaf Pengajuan Anda Gagal Diproses Karena Kurang Dari Rp.10.000.000";
+                return 0;
+            }
             cout<<"\n1. 12 Bulan"<<endl;
             cout<<"2. 6 Bulan"<<endl;
             cout<<"3. 3 Bulan"<<endl; 
             cout<<"Pilih Cicilan Anda [1, 2, 3] : ";
             cin>>cicilan;
+
             if(cicilan == 1) { 
             bunga = pengajuan / 12 * 0.01 ;
             hasil = pengajuan / 12 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+             
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Wirausaha" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 12 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
+            }
+            
                 
             }else if (cicilan == 2) {
             bunga = pengajuan / 6 * 0.01 ;
             hasil = pengajuan / 6 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+             
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Wirausaha" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 6 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
+            }
 
             }else if (cicilan == 3) {
             bunga = pengajuan / 3 * 0.01 ;
             hasil = pengajuan / 3 ;
+            hasil2 = bunga + hasil ;
             cout<<"\nAnda harus membayar bunga  sebesar = "<<"RP."<<bunga<<" /Bulan";
             cout<<"\nAnda harus membayar cicilan wajib sebesar = "<<"RP."<<hasil<<" /Bulan";
+            cout << "\nMasukkan DP Rp. 2.500.000 = ";
+            cin >> dp;
+             
+             if (dp == 2500000){
+             cout << "\n============================================================\n\n";
+             cout << "                     Kwitansi Pembayaran\n\n";
+             cout << "Nama Lengkap Anda : " << nama;
+             cout << "\nNomor KTP Anda : " << ktp;
+             cout << "\nJumlah Anak Anda : " << anak;
+             cout << "\nPekerjaan Anda : Wirausaha" ;
+             cout << "\nCicilan Yang Anda Harus Lunasi Selama : 3 Bulan" ;
+             cout << "\nPembayaran Yang Harus Anda Bayar Sebesar : " << hasil2;
+             cout << "\n\n             ~~~~~~~ TERIMA KASIH ~~~~~~~\n";
+             cout << "\n============================================================\n";
             }
-        }
+            }
+        } 
         break;
-    }
+    } 
+    return 0;
 
+}
 }

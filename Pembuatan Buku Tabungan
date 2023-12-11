@@ -1,0 +1,126 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+int main(){
+	string namaibukandung;
+	string alamat;
+	string nama;
+	char tanggal_lahir[30];
+	char email[50];
+	string nomortelp;
+	string noktp;
+	string cek;
+	string pin1;
+	string pin2;
+	string uang;	
+    cout<<"========================================"<<endl;
+    cout<<"|                                      |"<<endl;
+    cout<<"|           SELAMAT DATANG DI          |"<<endl;
+    cout<<"|             BCA BANK                 |"<<endl;
+    cout<<"|                                      |"<<endl;
+    cout<<"========================================"<<endl;
+    cout<<"| >> Pendaftaran Rekening Baru         |"<<endl;
+    cout<<"========================================"<<endl;
+    cout << "Masukkan Nama (maximal 50 kata) : ";
+    getline(cin,nama);
+	if(nama.length() >= 50 ) {
+	cout<<"nama anda terlalu panjang lur "<<endl; 
+	return false;
+}
+	//alamat
+	cout << "Masukkan alamat : ";
+    getline(cin,alamat);	
+
+// tanggal lahirr
+cout << "masukan tanggal lahir anda = ";
+cin>>tanggal_lahir;
+//email
+cout<< "masukan email anda = " ;
+cin>>email;
+//notelp
+cout<<"masukan nomor telepon anda(minimal 13 kata) : "; 
+cin>>nomortelp;
+if(nomortelp.length() < 13) {
+	cout<<"nomor anda terlalu pendek ";
+	return false; 
+}
+//no ktp
+	cout<<"masukan no ktp anda : ";
+	cin>>noktp;
+	if(noktp.length() < 13) {
+	cout<<"nomor ktp anda terlalu pendek ";
+	return false; 
+}
+
+// nama ibu 
+	cout<<"masukan nama lengkap ibu anda  = " ;
+	cin>>namaibukandung;
+	
+ 	cout<<"========================================================"<<endl;
+    cout<<"|                                                    |"<<endl;
+    cout<<"|           DATA ANDA                                |"<<endl;
+    cout<<"|--------------------------------------------------- |"<<endl;
+    cout<<"|                                                    |"<<endl;
+	cout<<"|"<<"nama anda             :"<<nama<<endl;                       
+	cout<<"|"<<"alamat lengkap anda   :"<<alamat<<endl;                                  
+	cout<<"|"<<"tanggal lahir anda    :"<<tanggal_lahir<<endl;                          
+	cout<<"|"<<"email anda            :"<<email<<endl;                                   
+	cout<<"|"<<"nomor hp anda         :"<<nomortelp<<endl;                               
+	cout<<"|"<<"nomor ktp anda        :"<<noktp<<endl;                                   
+	cout<<"|"<<"nama ibu kandung anda :"<<namaibukandung<<endl;                         
+    cout<<"===================================================="<<endl;
+	
+
+	cout<<"sudah lengkap ya /tidak :  ";
+	cin>>cek;
+	if(cek == "ya") {
+		cout<<"mencetak kartu atm "<<endl;
+		pin:
+		cout<<"masukan  pin anda(6digit) :  ";
+		cin>>pin1;
+		if(pin1.length() > 6){
+		cout<<"terlalu banyak pin mohon mengulang kembali";
+		goto pin;
+}
+		cout<<"masukan pin anda sekali lagi(6digit) :  ";
+		cin>>pin2;
+		if (pin1 != pin2 ) {
+			cout<<"anda salah memasukan pin harap mengulang kembali"<<endl;
+			goto pin;			
+}
+		cout<<"masukan uang setoran pertama minimal (Rp.100.000)";
+		cin>>uang;
+	cout<<"========================================================"<<endl;
+    cout<<"|                                                    |"<<endl;
+    cout<<"|           BUKU TABUNGAN ANDA                       |"<<endl;
+    cout<<"|--------------------------------------------------- |"<<endl;
+    cout<<"|                                                    |"<<endl;
+	cout<<"|"<<"nama anda             :"<<nama<<endl;                       
+	cout<<"|"<<"alamat lengkap anda   :"<<alamat<<endl;                                  
+	cout<<"|"<<"tanggal lahir anda    :"<<tanggal_lahir<<endl;                          
+	cout<<"|"<<"email anda            :"<<email<<endl;                                   
+	cout<<"|"<<"nomor hp anda         :"<<nomortelp<<endl;                               
+	cout<<"|"<<"nomor ktp anda        :"<<noktp<<endl;                                   
+	cout<<"|"<<"nama ibu kandung anda :"<<namaibukandung<<endl;
+	cout<<"|"<<"Pin anda : xxxxxx"<<endl;
+	cout<<"|"<<"saldo anda : "<<"Rp."<<uang<<endl;
+	                         
+    cout<<"===================================================="<<endl;
+	
+		
+		
+
+ }else{
+	cout<<"data gagal di proses harap mengulang nya kembali "<<endl;
+	return false;
+}
+	
+
+ 
+
+	return 0;
+}
